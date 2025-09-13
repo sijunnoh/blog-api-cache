@@ -136,32 +136,15 @@ const AxiosTestPage = async () => {
           <ul className="list-inside list-disc space-y-2 text-gray-700">
             <li>
               <code className="rounded bg-white px-2 py-1">axios</code>는
-              <strong> 독립적인 HTTP 클라이언트</strong>로 Next.js 캐싱과 무관
+              <strong> 기본적으로 캐싱이나 요청 중복 제거를 하지 않음</strong>
             </li>
             <li>
               총 <strong>6번의 개별 HTTP 요청</strong>이 발생 (layout 2번 +
               metadata 2번 + page 2번)
             </li>
-            <li>네트워크 탭에서 실제로 6개의 요청을 확인 가능</li>
-            <li>
-              API 서버 로그에서도 "Current time API is being called" 6번 출력
-            </li>
-          </ul>
-        </div>
-
-        <div className="rounded-lg border border-gray-200 bg-gray-50 p-6">
-          <h2 className="mb-3 text-xl font-semibold text-gray-900">
-            중요 포인트
-          </h2>
-          <ul className="list-inside list-disc space-y-2 text-gray-700">
-            <li>
-              <code className="rounded bg-white px-2 py-1">axios</code>는
-              <strong> 기본적으로 캐싱이나 요청 중복 제거를 하지 않음</strong>
-            </li>
             <li>
               매 호출마다 새로운 HTTP 요청이 발생하여 네트워크 오버헤드 증가
             </li>
-            <li>동일한 데이터를 여러 번 요청할 때 성능 저하 가능성</li>
             <li>
               캐싱이 필요한 경우 React cache() 또는 별도 캐싱 로직 구현 필요
             </li>
