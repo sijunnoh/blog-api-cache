@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next"
 
+import QueryClientProvider from "@/providers/query-client-provider"
+
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -21,7 +23,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="kr">
-      <body className="flex flex-col">{children}</body>
+      <body className="flex flex-col">
+        <QueryClientProvider>{children}</QueryClientProvider>
+      </body>
     </html>
   )
 }
